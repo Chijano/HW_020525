@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+    <h1>List of Users</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.age }}</td>
+                    <td><a href="{{ url_for('profile', user_id=user.id) }}">View Profile</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

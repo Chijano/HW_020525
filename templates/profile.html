@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Profile of {{ user.name }}{% endblock %}
+
+{% block content %}
+    <h1>Profile of {{ user.name }}</h1>
+
+    <ul>
+        <li><strong>Name:</strong> {{ user.name }}</li>
+        <li><strong>Age:</strong> {{ user.age }}</li>
+        <li><strong>ID:</strong> {{ user.id }}</li>
+        <!-- You can add more details here if needed -->
+    </ul>
+
+    <!-- You can also display other dynamic data such as email or address if available -->
+    <!-- For example: -->
+    <!-- <li><strong>Email:</strong> {{ user.email }}</li> -->
+
+    <!-- Link to go back to the user list page -->
+    <a href="{{ url_for('users') }}">Back to User List</a>
+{% endblock %}

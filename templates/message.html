@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Send a Message{% endblock %}
+
+{% block content %}
+    <h1>Send a Message</h1>
+
+    <form action="{{ url_for('message') }}" method="POST">
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+    <br><br>
+    <button type="submit">Send Message</button>
+    </form>
+
+{% endblock %}
